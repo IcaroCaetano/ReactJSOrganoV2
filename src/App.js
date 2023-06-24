@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Banner from './componentes/Banner/Banner';
 import Formulario from './componentes/Formulario';
+import Time from './componentes/Time';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
   const aoNovoColaboradorAdicionado = (colaborador) => {
     console.log(colaborador)
     setColaboradores([...colaboradores, colaborador])
+    console.log(colaboradores)
   }
 
   return (
@@ -17,6 +19,9 @@ function App() {
       <Formulario 
         aoColaboradorCadastrado = {colaborador => aoNovoColaboradorAdicionado(colaborador)} 
       />
+      <Time nome="Programação"/>
+      <Time nome="Frontend"/>
+      <Time nome="Data Sciense"/>
     </div>
   );
 }
