@@ -1,3 +1,4 @@
+import Colaborador from '../Colaborador'
 import './Time.css'
 
 const Time = (props) => {
@@ -8,6 +9,7 @@ const Time = (props) => {
             <h3 style={{ borderColor: props.corPrimaria } }>
                 {props.nome}
             </h3>
+            <Colaborador/>
         </section>
     )
 }
