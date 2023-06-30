@@ -5,6 +5,7 @@ const Time = (props) => {
     const css = { backgroundColor: props.corSecundaria }
 
     return (
+        (props.colaboradores.length > 0) ?
         <section className='time' style={css}>
             <h3 style={{ borderColor: props.corPrimaria } }>
                 {props.nome}
@@ -18,6 +19,7 @@ const Time = (props) => {
                 /> )}
             </div>
         </section>
+        : ''
     )
 }
 
