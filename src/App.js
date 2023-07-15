@@ -52,19 +52,26 @@ function App() {
     console.log(colaboradores)
   }
 
+  const  deletarColaborador = () => {
+    console.log('deletando colaborador pelo App');
+  }  
+
   return (
     <div className="App">
       <Banner/>
       <Formulario times={times.map(time => time.nome)}
         aoColaboradorCadastrado = {colaborador => aoNovoColaboradorAdicionado(colaborador)} 
       />
-      {times.map(time => <Time 
-        key={time.nome} 
-        nome={time.nome}
-        corPrimaria={time.corPrimaria} 
-        corSecundaria={time.corSecundaria}
-        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
-      /> )}
+      {times.map(time => 
+        <Time 
+          key={time.nome} 
+          nome={time.nome}
+          corPrimaria={time.corPrimaria} 
+          corSecundaria={time.corSecundaria}
+          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+          aoDeletarPeloApp={deletarColaborador}
+        /> 
+      )}
       <Rodape/>
     </div>
   );
